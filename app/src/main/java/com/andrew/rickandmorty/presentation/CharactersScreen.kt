@@ -68,7 +68,7 @@ fun CharacterCardView(character: Character, modifier: Modifier) {
                 painter = rememberAsyncImagePainter(character.image),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(128.dp)
+                modifier = Modifier.size(120.dp)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
