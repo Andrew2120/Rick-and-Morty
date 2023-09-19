@@ -18,6 +18,7 @@ class ViewModel @Inject constructor(
     private val getCharactersUseCase: GetCharactersUseCase,
 ) : ViewModel() {
 
+
     private val _state = MutableStateFlow(CountriesState())
     val state = _state.asStateFlow()
 
