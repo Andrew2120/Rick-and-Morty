@@ -28,7 +28,7 @@ fun CountriesScreen(
     Box(modifier = Modifier.fillMaxSize()) {
         if (state.isLoading) {
             CircularProgressIndicator(
-                modifier = Modifier.align(Alignment.Center)
+                modifier = Modifier.align(Alignment.Center),
             )
         } else {
             LazyVerticalGrid(
@@ -40,16 +40,13 @@ fun CountriesScreen(
                         character = character,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(4.dp)
+                            .padding(4.dp),
                     )
                 }
             }
-
-
         }
     }
 }
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -58,28 +55,27 @@ fun CharacterCardView(character: Character, modifier: Modifier) {
         shape = RoundedCornerShape(8.dp),
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
         ) {
-
             Image(
                 painter = rememberAsyncImagePainter(character.image),
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.size(120.dp)
+                modifier = Modifier.size(120.dp),
             )
 
             Spacer(modifier = Modifier.height(16.dp))
             Text(
                 text = character.name,
-                style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
+                style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold),
             )
             Spacer(modifier = Modifier.height(8.dp))
             Text(
                 text = character.species,
-                style = TextStyle(fontSize = 16.sp)
+                style = TextStyle(fontSize = 16.sp),
             )
         }
     }
