@@ -1,0 +1,11 @@
+name: Android Build & Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests
+        run: bundle exec fastlane android test
