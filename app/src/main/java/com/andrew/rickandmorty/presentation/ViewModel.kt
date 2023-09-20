@@ -1,8 +1,6 @@
 package com.andrew.rickandmorty.presentation
 
 import androidx.lifecycle.ViewModel
-
-
 import androidx.lifecycle.viewModelScope
 import com.andrew.rickandmorty.domain.models.Character
 import com.andrew.rickandmorty.domain.use_cases.GetCharactersUseCase
@@ -19,6 +17,7 @@ class ViewModel @Inject constructor(
 ) : ViewModel() {
 
 
+
     private val _state = MutableStateFlow(CountriesState())
     val state = _state.asStateFlow()
 
@@ -26,21 +25,17 @@ class ViewModel @Inject constructor(
         viewModelScope.launch {
             _state.update {
                 it.copy(
-                    isLoading = true
+                    isLoading = true,
                 )
             }
             _state.update {
                 it.copy(
                     countries = getCharactersUseCase(),
-                    isLoading = false
+                    isLoading = false,
                 )
             }
         }
     }
-
-
-
-
 
     data class CountriesState(
         val countries: List<Character> = emptyList(),
