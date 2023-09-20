@@ -21,6 +21,8 @@ import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import com.andrew.rickandmorty.domain.models.Character
 
+
+
 @Composable
 fun CountriesScreen(
     state: ViewModel.CountriesState,
